@@ -1,80 +1,50 @@
-# meme-generator
-A React Meme Generator that fetches meme templates from the Imgflip API, supports custom top/bottom text, random meme selection, loading/error handling, and smooth DOM scrolling.
+# Meme Generator
 
-Meme Generator
+A responsive Meme Generator built with **React** as a project-based learning exercise. The application fetches meme templates from the Imgflip API, lets users enter top and bottom text, and generates a random meme template with the selected text displayed over the image.
 
-A responsive Meme Generator built with React as a project-based learning exercise. The application fetches meme templates from the Imgflip API, lets users enter top and bottom text, and generates a random meme template with the selected text displayed over the image.
+## Live Features
 
-Live Features
+- Enter custom **top text** and **bottom text**
+- Fetch meme templates from the **Imgflip API**
+- Generate a random meme template
+- Display text dynamically over the meme image
+- Smoothly scroll to the generated meme
+- Loading-state handling while meme templates are fetched
+- Error handling for failed API requests
+- Abort an in-progress API request when the effect is cleaned up
+- Responsive and clean meme-generator interface
 
-Enter custom top text and bottom text
-
-Fetch meme templates from the Imgflip API
-
-Generate a random meme template
-
-Display text dynamically over the meme image
-
-Smoothly scroll to the generated meme
-
-Loading-state handling while meme templates are fetched
-
-Error handling for failed API requests
-
-Abort an in-progress API request when the effect is cleaned up
-
-Responsive and clean meme-generator interface
-
-Concepts Learned
+## Concepts Learned
 
 This project was built step-by-step to practice important React concepts:
 
-React components and JSX
+- React components and JSX
+- `useState`
+- State objects
+- Functional state updates
+- Controlled components and forms
+- Event handling
+- Immutability and the spread operator
+- Functional programming patterns
+- JavaScript `fetch()`
+- `async/await`
+- Working with JSON APIs
+- `useEffect`
+- Dependency arrays
+- Effect cleanup
+- `AbortController`
+- Loading and error states
+- `useRef`
+- DOM references
+- `scrollIntoView()`
+- Conditional UI behavior
+- Defensive programming
 
-useState
-
-State objects
-
-Functional state updates
-
-Controlled components and forms
-
-Event handling
-
-Immutability and the spread operator
-
-Functional programming patterns
-
-JavaScript fetch()
-
-async/await
-
-Working with JSON APIs
-
-useEffect
-
-Dependency arrays
-
-Effect cleanup
-
-AbortController
-
-Loading and error states
-
-useRef
-
-DOM references
-
-scrollIntoView()
-
-Conditional UI behavior
-
-Defensive programming
-
-How It Works
+## How It Works
 
 The application maintains three main pieces of state:
 
+```text
 meme
 ├── topText
 ├── bottomText
@@ -85,9 +55,11 @@ memes
 
 isLoading
 └── whether meme templates are still being fetched
+```
 
 The main data flow is:
 
+```text
 Imgflip API
     ↓
 fetch()
@@ -107,9 +79,11 @@ setMeme()
 React re-renders
     ↓
 Meme image + text displayed
+```
 
 The text inputs are controlled components, meaning their values are stored in React state:
 
+```text
 User types
     ↓
 onChange
@@ -119,17 +93,19 @@ handleChange()
 meme state
     ↓
 React re-renders
+```
 
-API
+## API
 
 Meme templates are fetched from the Imgflip API:
 
-https://api.imgflip.com/get_memes
+`https://api.imgflip.com/get_memes`
 
-The application reads the memes array from the API response and stores it in React state.
+The application reads the `memes` array from the API response and stores it in React state.
 
-Project Structure
+## Project Structure
 
+```text
 meme-generator/
 ├── public/
 ├── src/
@@ -140,83 +116,76 @@ meme-generator/
 ├── package.json
 ├── package-lock.json
 └── README.md
+```
 
-Running Locally
+## Running Locally
 
-1. Clone the repository
+### 1. Clone the repository
 
+```bash
 git clone <your-repository-url>
+```
 
-2. Move into the project directory
+### 2. Move into the project directory
 
+```bash
 cd meme-generator
+```
 
-3. Install dependencies
+### 3. Install dependencies
 
+```bash
 npm install
+```
 
-4. Start the development server
+### 4. Start the development server
 
+```bash
 npm run dev
+```
 
 Open the local URL shown in the terminal.
 
-Technologies Used
+## Technologies Used
 
-React
+- **React**
+- **JavaScript**
+- **HTML**
+- **CSS**
+- **Vite**
+- **Imgflip API**
 
-JavaScript
+## Learning Notes
 
-HTML
-
-CSS
-
-Vite
-
-Imgflip API
-
-Learning Notes
-
-This project was created as part of my React learning journey. Along with building the application, I focused on understanding why each React feature is used rather than only following the implementation.
+This project was created as part of my React learning journey. Along with building the application, I focused on understanding **why** each React feature is used rather than only following the implementation.
 
 The project helped me understand the difference between:
 
-State and props
+- State and props
+- Collection state and selected/current state
+- Rendering and side effects
+- `useState` and `useRef`
+- `useEffect` with different dependency arrays
+- API data and UI state
+- Setting up an effect and cleaning it up
 
-Collection state and selected/current state
-
-Rendering and side effects
-
-useState and useRef
-
-useEffect with different dependency arrays
-
-API data and UI state
-
-Setting up an effect and cleaning it up
-
-Future Improvements
+## Future Improvements
 
 Possible improvements include:
 
-Add a download/share meme feature
+- Add a download/share meme feature
+- Add more meme customization options
+- Add font and text-size controls
+- Add text color controls
+- Add meme template search
+- Add better mobile styling
+- Add a dedicated error message in the UI
+- Allow users to upload their own image
 
-Add more meme customization options
+## Acknowledgements
 
-Add font and text-size controls
+Meme templates are provided through the [Imgflip API](https://api.imgflip.com/).
 
-Add text color controls
+---
 
-Add meme template search
-
-Add better mobile styling
-
-Add a dedicated error message in the UI
-
-Allow users to upload their own image
-
-Acknowledgements
-
-Meme templates are provided through the Imgflip API.
-
-Built with React as part of my frontend development learning journey.
+**Built with React as part of my frontend development learning journey.**
